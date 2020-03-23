@@ -54,12 +54,12 @@ zuul:
   routes:
     back:
       path: /admin/**
-      serviceId: ylzinfo-cloud-sysmanager-srp
+      serviceId: cloud-sysmanager
       semaphore:
         max-semaphores: 200  #针对单个服务路由的最大信号量
 #    demo:
 #      path: /demo/**
-#      serviceId: ylzinfo-cloud-feign-demo
+#      serviceId: cloud-feign-demo
 ```
 
 
