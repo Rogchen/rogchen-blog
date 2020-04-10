@@ -102,6 +102,8 @@ hystrix(熔断)，当通过服务网关（基于Zuul实现）调用后端服务�
 * 方法二、 通过fallbackFactory工厂类 在FeignClient 上配置fallbackFactory = HystrixClientFallbackFactory.class 
 `public class HystrixClientFallbackFactory implements FallbackFactory<方法二> `
 
+hystrix配置
+---
 ``` hystrix配置
 hystrix:
   threadpool:
@@ -114,10 +116,13 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 60000  #发生熔断的超时时间
+            timeoutInMilliseconds: 60  #发生熔断的超时时间
             strategy: SEMAPHORE   #隔离策略	
             semaphore:
         		  max-semaphores: 2000 #信号量大小
 ```
 ## 总结
 hystrix 跟ribbion个配置有个换算关系大致是：发生熔断的超时时间>=ribbion读超时+连接超时*最大尝试次数。
+
+## 测试用例
+[hystrix的基础配置](https://gitee.com/rogchen/hystrix-demo)

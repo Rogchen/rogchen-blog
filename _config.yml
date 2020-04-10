@@ -99,8 +99,13 @@ exclude_generator:
 
 deploy:
   type: git
-  repository: git@github.com:Rogchen/Rogchen.github.io.git
-  branch: master
+# 单仓库提交  
+#  repository: git@github.com:Rogchen/Rogchen.github.io.git
+# 多仓库提交
+	repo:
+	  gitee: git@gitee.com:rogchen/rogchen.git
+	  github: git@github.com:Rogchen/Rogchen.github.io.git
+	branch: master
 
 sitemap:
     path: sitemap.xml
